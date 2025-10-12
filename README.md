@@ -3,14 +3,14 @@
 ## Overview
 This project implements a solution for the following task: test-sum-sales-20251012154236
 
-**Brief:** Publish a single-page site that displays 'Hello World' in large text, uses Bootstrap 5 from CDN, and has a blue background.
+**Brief:** Update the page to display 'Hello World - Updated!' and add a button that shows an alert when clicked.
 
 ## Features
-1. Page displays 'Hello World'
-2. Bootstrap 5 is loaded from CDN
-3. Background is blue
-4. Repo has MIT license
-5. README.md is professional
+1. Page displays 'Hello World - Updated!'
+2. Page has a clickable button
+3. Button shows alert on click
+4. Bootstrap 5 is still loaded
+5. README.md is updated
 
 ## Setup
 This is a static HTML application that requires no build steps.
