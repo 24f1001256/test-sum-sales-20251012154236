@@ -3,93 +3,109 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hello World - Blue Background</title>
+    <title>Hello World App</title>
 
-    <!--
-        Bootstrap 5 CSS from CDN
-        This link loads the core Bootstrap styling, including utility classes for layout and text.
-    -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <!-- Bootstrap 5 CSS CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
 
     <style>
         /*
-            Inline CSS for the application's specific styling requirements.
-            This section sets the background color and ensures the content is vertically and horizontally centered.
-        */
+         * Inline CSS for custom styling and visual appeal.
+         * Centers the content on the page and provides a clean, modern look.
+         */
         body {
-            /* Set a pleasant blue background color. 'steelblue' is a widely recognized CSS color. */
-            background-color: steelblue;
-            
-            /*
-                Ensure the body takes up the full viewport height.
-                This is crucial for the background color to span the entire screen.
-            */
-            min-height: 100vh;
-            
-            /* Remove default body margins and padding to ensure full-width/height background. */
-            margin: 0;
-            padding: 0;
-            
-            /*
-                Use Flexbox for easy centering of content.
-                `display: flex` turns the body into a flex container.
-                `justify-content: center` centers child items horizontally.
-                `align-items: center` centers child items vertically.
-            */
             display: flex;
+            flex-direction: column;
             justify-content: center;
             align-items: center;
-            
-            /* Apply a modern, sans-serif font for better readability. */
+            min-height: 100vh; /* Full viewport height */
+            margin: 0;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f0f2f5; /* Light background for a modern feel */
+            color: #333;
+            padding: 20px;
         }
 
-        /*
-            Media query for responsive font size adjustments.
-            On smaller screens (e.g., mobile devices), the 'Hello World' text will be slightly smaller
-            to prevent overflow and improve aesthetics, while still remaining large.
-        */
-        @media (max-width: 768px) {
-            .display-1 {
-                /*
-                    Bootstrap's display-1 class already has some responsiveness.
-                    This overrides it for a slightly smaller base on very small screens if desired,
-                    but typically display-1 is quite adaptive on its own.
-                    Keeping it for illustrative purposes of custom responsiveness.
-                */
-                font-size: 4rem !important; /* !important to override Bootstrap's default display-1 */
-            }
+        .container {
+            text-align: center;
+            padding: 30px;
+            background-color: #ffffff; /* White background for the content box */
+            border-radius: 10px; /* Rounded corners */
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+            max-width: 500px; /* Max width for better readability */
+            width: 100%; /* Responsive width */
+        }
+
+        h1 {
+            color: #007bff; /* Bootstrap primary blue */
+            margin-bottom: 25px;
+            font-weight: 600; /* Bolder text for emphasis */
+            font-size: 2.5rem; /* Larger font size */
+        }
+
+        /* Custom button styling based on Bootstrap's .btn-primary */
+        .btn-primary {
+            background-color: #007bff;
+            border-color: #007bff;
+            font-size: 1.1em;
+            padding: 10px 25px;
+            border-radius: 5px;
+            transition: background-color 0.3s ease, border-color 0.3s ease, transform 0.2s ease; /* Smooth transitions for hover effects */
+        }
+
+        .btn-primary:hover {
+            background-color: #0056b3; /* Darker blue on hover */
+            border-color: #0056b3;
+            transform: translateY(-2px); /* Slight lift effect on hover */
+            box-shadow: 0 4px 10px rgba(0, 123, 255, 0.2); /* Subtle shadow on hover */
+        }
+
+        .btn-primary:active {
+            transform: translateY(0); /* Reset transform on click */
+            background-color: #004085; /* Even darker on active */
+            border-color: #004085;
         }
     </style>
 </head>
 <body>
-    <!--
-        Main content area for the 'Hello World' message.
-        The <h1> tag is used for semantic heading, and Bootstrap classes are applied for styling.
-    -->
-    <h1 class="display-1 text-white">
-        <!--
-            'Hello World' text.
-            'display-1' Bootstrap class makes the text very large and responsive.
-            'text-white' Bootstrap class sets the text color to white for high contrast
-            against the blue background.
-        -->
-        Hello World
-    </h1>
 
-    <!--
-        Bootstrap 5 JavaScript from CDN
-        These scripts are necessary for Bootstrap's interactive components (e.g., navbars, carousels).
-        While not strictly required for this simple page, it's good practice to include them when
-        using Bootstrap to ensure all functionality is available if the page were to expand.
-        Popper.js is a dependency for many Bootstrap components like tooltips and popovers.
-    -->
+    <div class="container">
+        <!-- Main heading displaying the updated message -->
+        <h1 class="mb-4">Hello World - Updated!</h1>
+
+        <!-- Button that will trigger an alert when clicked -->
+        <button id="alertButton" class="btn btn-primary btn-lg">Click Me For An Alert</button>
+    </div>
+
+    <!-- Bootstrap 5 JavaScript Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlcoVSVzGH2WcZabwWGSSF7QSIgxaT" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js" integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+" crossorigin="anonymous"></script>
 
-    <!--
-        No custom JavaScript is required for this application, as its sole purpose
-        is to display static text with styling.
-    -->
+    <script>
+        /*
+         * Inline JavaScript using modern ES6+ features.
+         * Adds an event listener to the button to show an alert on click.
+         */
+        document.addEventListener('DOMContentLoaded', () => {
+            // Get a reference to the button element using its ID
+            const button = document.getElementById('alertButton');
+
+            // Add an event listener for the 'click' event
+            button.addEventListener('click', () => {
+                // Show a simple alert box when the button is clicked
+                alert('Button clicked! Hello from your friendly alert!');
+            });
+
+            // Basic error handling example for script initialization.
+            // In a more complex application, this would wrap more critical operations.
+            try {
+                console.log('Application scripts initialized successfully.');
+            } catch (error) {
+                console.error('An error occurred during script initialization:', error);
+                // Optionally, inform the user about the error
+                // alert('An unexpected error occurred. Please refresh the page.');
+            }
+        });
+    </script>
 </body>
 </html>
