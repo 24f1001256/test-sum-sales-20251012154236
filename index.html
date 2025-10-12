@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hello World - Blue Background</title>
+
+    <!--
+        Bootstrap 5 CSS from CDN
+        This link loads the core Bootstrap styling, including utility classes for layout and text.
+    -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
+    <style>
+        /*
+            Inline CSS for the application's specific styling requirements.
+            This section sets the background color and ensures the content is vertically and horizontally centered.
+        */
+        body {
+            /* Set a pleasant blue background color. 'steelblue' is a widely recognized CSS color. */
+            background-color: steelblue;
+            
+            /*
+                Ensure the body takes up the full viewport height.
+                This is crucial for the background color to span the entire screen.
+            */
+            min-height: 100vh;
+            
+            /* Remove default body margins and padding to ensure full-width/height background. */
+            margin: 0;
+            padding: 0;
+            
+            /*
+                Use Flexbox for easy centering of content.
+                `display: flex` turns the body into a flex container.
+                `justify-content: center` centers child items horizontally.
+                `align-items: center` centers child items vertically.
+            */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            
+            /* Apply a modern, sans-serif font for better readability. */
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        /*
+            Media query for responsive font size adjustments.
+            On smaller screens (e.g., mobile devices), the 'Hello World' text will be slightly smaller
+            to prevent overflow and improve aesthetics, while still remaining large.
+        */
+        @media (max-width: 768px) {
+            .display-1 {
+                /*
+                    Bootstrap's display-1 class already has some responsiveness.
+                    This overrides it for a slightly smaller base on very small screens if desired,
+                    but typically display-1 is quite adaptive on its own.
+                    Keeping it for illustrative purposes of custom responsiveness.
+                */
+                font-size: 4rem !important; /* !important to override Bootstrap's default display-1 */
+            }
+        }
+    </style>
+</head>
+<body>
+    <!--
+        Main content area for the 'Hello World' message.
+        The <h1> tag is used for semantic heading, and Bootstrap classes are applied for styling.
+    -->
+    <h1 class="display-1 text-white">
+        <!--
+            'Hello World' text.
+            'display-1' Bootstrap class makes the text very large and responsive.
+            'text-white' Bootstrap class sets the text color to white for high contrast
+            against the blue background.
+        -->
+        Hello World
+    </h1>
+
+    <!--
+        Bootstrap 5 JavaScript from CDN
+        These scripts are necessary for Bootstrap's interactive components (e.g., navbars, carousels).
+        While not strictly required for this simple page, it's good practice to include them when
+        using Bootstrap to ensure all functionality is available if the page were to expand.
+        Popper.js is a dependency for many Bootstrap components like tooltips and popovers.
+    -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlcoVSVzGH2WcZabwWGSSF7QSIgxaT" crossorigin="anonymous"></script>
+
+    <!--
+        No custom JavaScript is required for this application, as its sole purpose
+        is to display static text with styling.
+    -->
+</body>
+</html>
